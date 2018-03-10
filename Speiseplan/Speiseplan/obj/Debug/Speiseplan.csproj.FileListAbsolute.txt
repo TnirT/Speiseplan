@@ -1,0 +1,10 @@
+D:\SWE\Git-Projekte\Speiseplan\Speiseplan\Speiseplan\bin\Debug\Speiseplan.exe.config
+D:\SWE\Git-Projekte\Speiseplan\Speiseplan\Speiseplan\bin\Debug\Speiseplan.exe
+D:\SWE\Git-Projekte\Speiseplan\Speiseplan\Speiseplan\bin\Debug\Speiseplan.pdb
+D:\SWE\Git-Projekte\Speiseplan\Speiseplan\Speiseplan\obj\Debug\Speiseplan.csprojResolveAssemblyReference.cache
+D:\SWE\Git-Projekte\Speiseplan\Speiseplan\Speiseplan\obj\Debug\Speiseplan.Form1.resources
+D:\SWE\Git-Projekte\Speiseplan\Speiseplan\Speiseplan\obj\Debug\Speiseplan.Properties.Resources.resources
+D:\SWE\Git-Projekte\Speiseplan\Speiseplan\Speiseplan\obj\Debug\Speiseplan.csproj.GenerateResource.Cache
+D:\SWE\Git-Projekte\Speiseplan\Speiseplan\Speiseplan\obj\Debug\Speiseplan.csproj.CoreCompileInputs.cache
+D:\SWE\Git-Projekte\Speiseplan\Speiseplan\Speiseplan\obj\Debug\Speiseplan.exe
+D:\SWE\Git-Projekte\Speiseplan\Speiseplan\Speiseplan\obj\Debug\Speiseplan.pdb
