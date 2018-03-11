@@ -32,6 +32,8 @@ namespace Speiseplan
         private void Form1_Load(object sender, EventArgs e)
         {
             r = new Random();
+
+            int hoffentlichgehts = 1;
         }
 
 
