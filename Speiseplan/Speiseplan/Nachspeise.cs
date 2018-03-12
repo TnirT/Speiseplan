@@ -17,4 +17,4 @@ namespace Speiseplan
         public long NName { get; set; }
     }
 }
-}
+

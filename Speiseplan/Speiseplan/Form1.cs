@@ -33,9 +33,14 @@ namespace Speiseplan
         {
             r = new Random();
 
-            int hoffentlichgehts = 1;
+            
         }
 
+
+        internal void Planung()
+        {
+
+        }
 
     }
 }
