@@ -18,9 +18,7 @@ namespace Speiseplan
             InitializeComponent();
         }
         
-        OleDbCommand cmd;
-        string sql;
-        ListViewItem lvItem;
+       
         Random r;
         DatabaseAccess da = new DatabaseAccess();
         OleDbDataReader dr;
@@ -29,6 +27,10 @@ namespace Speiseplan
         internal List<Nachspeise> Nachspeise = new List<Nachspeise>();
         string cn = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = Speiseplan.accdb";
         OleDbConnection conn;
+
+        OleDbCommand cmd;
+        string sql;
+        ListViewItem lvItem;
         private void Form1_Load(object sender, EventArgs e)
         {
             r = new Random();
@@ -39,7 +41,20 @@ namespace Speiseplan
 
         internal void Planung()
         {
+            conn = new OleDbConnection(cn);
+            conn.Open();
+            sql = "SELECT * FROM Speiseplan";
+            cmd = new OleDbCommand(sql, conn);
+            dr = cmd.ExecuteReader();
 
+            int count = 0;
+
+
+            int z = r.Next(0, 6);
+            for(int k = 0; k< 7; k++)
+            {
+
+            }
         }
 
     }
