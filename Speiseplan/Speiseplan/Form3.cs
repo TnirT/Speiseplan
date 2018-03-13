@@ -26,6 +26,7 @@ namespace Speiseplan
         OleDbCommand cmd;
         internal long pid;
         Form2 f2 = new Form2();
+        int test = 1;
         string sql;
 
         internal List<Vorspeise> VorspeiseL = new List<Vorspeise>();
@@ -35,25 +36,29 @@ namespace Speiseplan
         {
             f2.ReadIntoListView();
             da = new DatabaseAccess();
+
             if (this.Text.Equals("neu anlegen"))
             {
                 lbID.Visible = false;
                 txtID.Visible = false;
             }
-            else //Bearbeiten
+
+            //Bearbeiten
+           else
             {
-
-                for (int i = 0; i < f2.VorspeiseL.Count; i++)
+               for (int i = 0; i < f2.VorspeiseL.Count; i++)
                 {
-                    if (pid == f2.VorspeiseL[i].VID)
-                    {
+                   MessageBox.Show("hallo");
+                  if (pid == f2.VorspeiseL[i].VID)
+                    { 
+                            txtID.Text = f2.VorspeiseL[i].VID.ToString();
+                            txtN.Text = f2.VorspeiseL[i].VName;
 
-                        txtID.Text = f2.VorspeiseL[i].VID.ToString();
-                        txtN.Text = f2.VorspeiseL[i].VName.T;
-                       
                     }
-                }
-            }
+              }
+                
+
+           }
         }
 
         private void speichernToolStripMenuItem_Click(object sender, EventArgs e)
@@ -88,7 +93,7 @@ namespace Speiseplan
                 sql = "Update Vorspeise set VName = ?";
                 cmd = new OleDbCommand();
                 cmd.CommandText = sql;
-                cmd.Parameters.Add(new OleDbParameter("VName", Convert.ToDouble(txtN.Text)));
+                cmd.Parameters.Add(new OleDbParameter("VName", txtN.Text));
                
                 da.executeQuery(cmd);
 
