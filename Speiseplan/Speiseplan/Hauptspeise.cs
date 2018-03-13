@@ -9,12 +9,12 @@ namespace Speiseplan
     class Hauptspeise
     {
 
-        public Hauptspeise(long hid, long hname)
+        public Hauptspeise(long hid, string hname)
         {
             HID = hid;
             HName = hname;
         }
         public long HID { get; set; }
-        public long HName { get; set; }
+        public string HName { get; set; }
     }
 }

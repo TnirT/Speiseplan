@@ -8,13 +8,13 @@ namespace Speiseplan
 {
     class Vorspeise
     {
-        public Vorspeise(long vid, long vname)
+        public Vorspeise(long vid, string vname)
         {
             VID = vid;
             VName = vname;
         }
         public long VID { get; set; }
-        public long VName { get; set; }
+        public string VName { get; set; }
     }
 }
 
