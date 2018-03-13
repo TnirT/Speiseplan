@@ -30,31 +30,35 @@ namespace Speiseplan
         ListViewItem lvItem;
 
         internal List<Vorspeise> VorspeiseL = new List<Vorspeise>();
-        internal List<Hauptspeise> HauptspeiseL=new List<Hauptspeise>();
+        internal List<Hauptspeise> HauptspeiseL = new List<Hauptspeise>();
         internal List<Nachspeise> NachspeiseL = new List<Nachspeise>();
 
         string cn = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = Speiseplan.accdb";
         OleDbConnection conn;
 
-      
-       
+
+
         private void Form2_Load(object sender, EventArgs e)
         {
+            ReadIntoListView();
             listView1.FullRowSelect = true;
+        }
 
+        internal void ReadIntoListView()
+        {
             if (this.Text.Equals("VorspeiseListe"))
             {
                 conn = new OleDbConnection(cn);
-               
+
                 conn.Open();
                 sql = "SELECT * FROM Vorspeise";
                 cmd = new OleDbCommand(sql, conn);
-             
+
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
                     lvItem = new ListViewItem(dr[0].ToString());
-                    lvItem.SubItems.Add(dr[1].ToString());               
+                    lvItem.SubItems.Add(dr[1].ToString());
                     listView1.Items.Add(lvItem);
 
                     VorspeiseL.Add(new Vorspeise(Convert.ToInt64(dr[0].ToString()), (dr[1].ToString())));
@@ -62,7 +66,7 @@ namespace Speiseplan
                 conn.Close();
             }
 
-           else if (this.Text.Equals("HauptspeiseListe"))
+            else if (this.Text.Equals("HauptspeiseListe"))
             {
                 conn = new OleDbConnection(cn);
 
@@ -102,27 +106,23 @@ namespace Speiseplan
                 conn.Close();
             }
 
-            else
-            {
-                MessageBox.Show("wählen Sie bitte ein der Tabellen");
-            }
+           
         }
+    
+     
 
-        private void neuAnlegenToolStripMenuItem_Click(object sender, EventArgs e)
+      
+
+       
+
+        private void neuAnlegenToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             Form3 f3 = new Form3();
-            f3.Text = "Neu anlegen";
+            f3.Text = "neu anlegen";
             f3.ShowDialog();
         }
 
-        private void bearbeitenToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form3 f3 = new Form3();
-            f3.Text = "bearbeiten";
-            f3.ShowDialog();
-        }
-
-        private void löschenToolStripMenuItem_Click(object sender, EventArgs e)
+        private void löschenToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             if (this.Text.Equals("VorspeiseListe"))
             {
@@ -138,7 +138,7 @@ namespace Speiseplan
                     if (f.VID == vid)
                     {
                         //MessageBox.Show("gefunden!");
-                        sql = "Delete * from Vorspeise where VID = ?;";
+                        sql = "Delete from Vorspeise where VID = ?;";
                         cmd = new OleDbCommand();
                         cmd.CommandText = sql;
                         cmd.Parameters.AddWithValue("VID", vid);
@@ -199,7 +199,22 @@ namespace Speiseplan
             else
             {
                 MessageBox.Show("Falsche Tabelle");
+
             }
+        }
+
+        private void bearbeitenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Bitte wählen Sie ein Produkt zum Bearbeiten aus");
+                return;
+            }
+           Form3 f3 = new Form3();
+            f3.pid = Convert.ToInt64(listView1.SelectedItems[0].SubItems[0].Text.ToString());
+            
+            f3.Text = "bearbeiten";
+            f3.ShowDialog();
         }
     }
 }
