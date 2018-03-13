@@ -17,7 +17,6 @@ namespace Speiseplan
         public DatabaseAccess()
         {
             cn = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = Speiseplan.accdb";
-            // cn = "Provider = Microsoft.JET.OLEDB.4.0; Data Source = Internetradio.mdb";
             conn = new OleDbConnection(cn);
             conn.Open();
 

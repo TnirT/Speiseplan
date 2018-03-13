@@ -44,6 +44,8 @@
             this.vorspeisenListeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hauptspeisenListeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nachspeisenListeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.optionenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.druckenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -249,7 +251,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.vorspeisenListeToolStripMenuItem,
             this.hauptspeisenListeToolStripMenuItem,
-            this.nachspeisenListeToolStripMenuItem});
+            this.nachspeisenListeToolStripMenuItem,
+            this.optionenToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(749, 24);
@@ -276,6 +279,21 @@
             this.nachspeisenListeToolStripMenuItem.Size = new System.Drawing.Size(135, 20);
             this.nachspeisenListeToolStripMenuItem.Text = "Nachspeisen Liste";
             this.nachspeisenListeToolStripMenuItem.Click += new System.EventHandler(this.nachspeisenListeToolStripMenuItem_Click);
+            // 
+            // optionenToolStripMenuItem
+            // 
+            this.optionenToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.druckenToolStripMenuItem});
+            this.optionenToolStripMenuItem.Name = "optionenToolStripMenuItem";
+            this.optionenToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.optionenToolStripMenuItem.Text = "Optionen";
+            // 
+            // druckenToolStripMenuItem
+            // 
+            this.druckenToolStripMenuItem.Name = "druckenToolStripMenuItem";
+            this.druckenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.druckenToolStripMenuItem.Text = "Drucken";
+            this.druckenToolStripMenuItem.Click += new System.EventHandler(this.druckenToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -317,6 +335,8 @@
         private System.Windows.Forms.ToolStripMenuItem vorspeisenListeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hauptspeisenListeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nachspeisenListeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem optionenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem druckenToolStripMenuItem;
     }
 }
 

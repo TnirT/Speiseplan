@@ -1,0 +1,12 @@
+D:\4. Klasse\SWE\Git-Projekte\Speiseplan\Speiseplan\bin\x64\Debug\Speiseplan.exe.config
+D:\4. Klasse\SWE\Git-Projekte\Speiseplan\Speiseplan\bin\x64\Debug\Speiseplan.exe
+D:\4. Klasse\SWE\Git-Projekte\Speiseplan\Speiseplan\bin\x64\Debug\Speiseplan.pdb
+D:\4. Klasse\SWE\Git-Projekte\Speiseplan\Speiseplan\obj\x64\Debug\Speiseplan.Form1.resources
+D:\4. Klasse\SWE\Git-Projekte\Speiseplan\Speiseplan\obj\x64\Debug\Speiseplan.Form2.resources
+D:\4. Klasse\SWE\Git-Projekte\Speiseplan\Speiseplan\obj\x64\Debug\Speiseplan.Form3.resources
+D:\4. Klasse\SWE\Git-Projekte\Speiseplan\Speiseplan\obj\x64\Debug\Speiseplan.Properties.Resources.resources
+D:\4. Klasse\SWE\Git-Projekte\Speiseplan\Speiseplan\obj\x64\Debug\Speiseplan.csproj.GenerateResource.Cache
+D:\4. Klasse\SWE\Git-Projekte\Speiseplan\Speiseplan\obj\x64\Debug\Speiseplan.csproj.CoreCompileInputs.cache
+D:\4. Klasse\SWE\Git-Projekte\Speiseplan\Speiseplan\obj\x64\Debug\Speiseplan.exe
+D:\4. Klasse\SWE\Git-Projekte\Speiseplan\Speiseplan\obj\x64\Debug\Speiseplan.pdb
+D:\4. Klasse\SWE\Git-Projekte\Speiseplan\Speiseplan\obj\x64\Debug\Speiseplan.csprojResolveAssemblyReference.cache

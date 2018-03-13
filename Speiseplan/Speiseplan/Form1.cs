@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using Microsoft.Office.Interop.Word;
 
 namespace Speiseplan
 {
@@ -207,5 +208,53 @@ namespace Speiseplan
             f2.Text = "NachspeiseListe";
             f2.ShowDialog();
         }
+
+        private void druckenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //drucken();
+        }
+
+        //private void drucken()
+        //{
+        //    Microsoft.Office.Interop.Word.Application wordapp = new Microsoft.Office.Interop.Word.Application();
+        //    if (wordapp == null)
+        //    {
+        //        MessageBox.Show("Es konnte keine Verbindung zu Word hergestellt werden!");
+        //        return;
+        //    }
+
+        //    wordapp.Visible = true;
+
+        //    try
+        //    {
+        //        wordapp.Documents.Open(System.Windows.Forms.Application.StartupPath + "\\Speiseplan.docx");
+        //        wordapp.ActiveDocument.FormFields["Text1"].Result = 
+        //        wordapp.ActiveDocument.FormFields["Text2"].Result = 
+        //        wordapp.ActiveDocument.FormFields["Text3"].Result = 
+        //        wordapp.ActiveDocument.FormFields["Text4"].Result = 
+        //        wordapp.ActiveDocument.FormFields["Text5"].Result = 
+        //        wordapp.ActiveDocument.FormFields["Text6"].Result = 
+        //        wordapp.ActiveDocument.FormFields["Text7"].Result = 
+        //        wordapp.ActiveDocument.FormFields["Text8"].Result = 
+        //        wordapp.ActiveDocument.FormFields["Text9"].Result = 
+        //        wordapp.ActiveDocument.FormFields["Text10"].Result = 
+        //        wordapp.ActiveDocument.FormFields["Text11"].Result = 
+        //        wordapp.ActiveDocument.FormFields["Text12"].Result = 
+        //        wordapp.ActiveDocument.FormFields["Text13"].Result = 
+        //        wordapp.ActiveDocument.FormFields["Text14"].Result = 
+        //        wordapp.ActiveDocument.FormFields["Text15"].Result = 
+        //        wordapp.ActiveDocument.FormFields["Text16"].Result = 
+        //        wordapp.ActiveDocument.FormFields["Text17"].Result = 
+        //        wordapp.ActiveDocument.FormFields["Text18"].Result = 
+        //        wordapp.ActiveDocument.FormFields["Text19"].Result = 
+        //        wordapp.ActiveDocument.FormFields["Text20"].Result = 
+        //        wordapp.ActiveDocument.FormFields["Text21"].Result = 
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //    }
+        //}
+
     }
 }
