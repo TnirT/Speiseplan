@@ -146,11 +146,13 @@ namespace Speiseplan
                 {
                     if (f.VID == vid)
                     {
+                        
                         //MessageBox.Show("gefunden!");
-                        sql = "Delete from Vorspeise where VID = ?;";
+                        sql = "Delete * from Vorspeise where VID='" + listView1.SelectedIndices[0].ToString() + "'";
                         cmd = new OleDbCommand();
                         cmd.CommandText = sql;
-                        cmd.Parameters.AddWithValue("VID", vid);
+                        listView1.Items.RemoveAt(listView1.SelectedIndices[0]);
+                        da.executeQuery(cmd);
                         break;
                     }
 
@@ -171,7 +173,7 @@ namespace Speiseplan
                     if (f.HID == hid)
                     {
                         //MessageBox.Show("gefunden!");
-                        sql = "Delete * from Hauptspeise where HID = ?;";
+                        sql = "Delete * from Hauptspeise where HID = ?";
                         cmd = new OleDbCommand();
                         cmd.CommandText = sql;
                         cmd.Parameters.AddWithValue("HID", hid);
