@@ -18,7 +18,6 @@ namespace Speiseplan
         {
             f2 = this;
             InitializeComponent();
-
         }
 
         DatabaseAccess da = new DatabaseAccess();
@@ -63,7 +62,7 @@ namespace Speiseplan
                     listView1.Items.Add(lvItem);
 
                     VorspeiseL.Add(new Vorspeise(Convert.ToInt64(dr[0].ToString()), (dr[1].ToString())));
-                    MessageBox.Show(VorspeiseL.Count.ToString());
+                  //  MessageBox.Show(VorspeiseL.Count.ToString());
 
                 }
                 conn.Close();
@@ -111,17 +110,24 @@ namespace Speiseplan
 
            
         }
-    
-     
-
-      
-
-       
 
         private void neuAnlegenToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             Form3 f3 = new Form3();
-            f3.Text = "neu anlegen";
+            if (this.Text.Equals("VorspeiseListe"))
+            {
+                f3.Text = "Vorspeise anlegen";
+            }
+
+            if (this.Text.Equals("HauptspeiseListe"))
+            {
+                f3.Text = "Hauptspeise anlegen";
+            }
+
+            if (this.Text.Equals("NachspeiseListe"))
+            {
+                f3.Text = "Nachspeise anlegen";
+            }
             f3.ShowDialog();
         }
 
@@ -208,15 +214,57 @@ namespace Speiseplan
 
         private void bearbeitenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (listView1.SelectedItems.Count == 0)
+            Form3 f3 = new Form3();
+            if (this.Text.Equals("VorspeiseListe"))
             {
-                MessageBox.Show("Bitte wählen Sie ein Produkt zum Bearbeiten aus");
-                return;
+                if (listView1.SelectedItems.Count == 0)
+                {
+                    MessageBox.Show("Bitte wählen Sie ein Produkt zum Bearbeiten aus");
+                    return;
+                }
+
+                lvItem = listView1.SelectedItems[0];
+                f3.Text = "Vorspeise bearbeiten";
+                f3.pid = Convert.ToInt64(listView1.SelectedItems[0].SubItems[0].Text);
+                f3.txtID.Text = lvItem.SubItems[0].Text;
+                f3.txtN.Text = lvItem.SubItems[1].Text;
+               
             }
-           Form3 f3 = new Form3();
-            f3.pid = Convert.ToInt64(listView1.SelectedItems[0].SubItems[0].Text.ToString());
-            f3.Text = "bearbeiten";
+
+            if (this.Text.Equals("HauptspeiseListe"))
+            {
+                if (listView1.SelectedItems.Count == 0)
+                {
+                    MessageBox.Show("Bitte wählen Sie ein Produkt zum Bearbeiten aus");
+                    return;
+                }
+
+                lvItem = listView1.SelectedItems[0];
+                f3.Text = "Hauptspeise bearbeiten";
+                f3.pid = Convert.ToInt64(listView1.SelectedItems[0].SubItems[0].Text);
+                f3.txtID.Text = lvItem.SubItems[0].Text;
+                f3.txtN.Text = lvItem.SubItems[1].Text;
+               
+            }
+
+            if (this.Text.Equals("NachspeiseListe"))
+            {
+                if (listView1.SelectedItems.Count == 0)
+                {
+                    MessageBox.Show("Bitte wählen Sie ein Produkt zum Bearbeiten aus");
+                    return;
+                }
+
+                lvItem = listView1.SelectedItems[0];
+                f3.Text = "Nachspeise bearbeiten";
+                f3.pid = Convert.ToInt64(listView1.SelectedItems[0].SubItems[0].Text);
+                f3.txtID.Text = lvItem.SubItems[0].Text;
+                f3.txtN.Text = lvItem.SubItems[1].Text;
+              
+            }
+
             f3.ShowDialog();
+
         }
     }
 }

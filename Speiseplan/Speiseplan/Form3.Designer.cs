@@ -121,10 +121,10 @@
 
         private System.Windows.Forms.Label lbID;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.TextBox txtN;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem speichernToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem beendenToolStripMenuItem;
+        internal System.Windows.Forms.TextBox txtID;
+        internal System.Windows.Forms.TextBox txtN;
     }
 }
