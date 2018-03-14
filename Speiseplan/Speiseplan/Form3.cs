@@ -48,9 +48,10 @@ namespace Speiseplan
             {
                for (int i = 0; i < f2.VorspeiseL.Count; i++)
                 {
-                   MessageBox.Show("hallo");
-                  if (pid == f2.VorspeiseL[i].VID)
-                    { 
+                    MessageBox.Show("hallo");
+                    if (pid == f2.VorspeiseL[i].VID)
+                    {
+                        MessageBox.Show("hallo");
                             txtID.Text = f2.VorspeiseL[i].VID.ToString();
                             txtN.Text = f2.VorspeiseL[i].VName;
 
