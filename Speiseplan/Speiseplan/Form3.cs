@@ -19,7 +19,7 @@ namespace Speiseplan
             f3 = this;
             InitializeComponent();
         }
-        string cn = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = DatenbankVerkauf.accdb";
+        string cn = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = Speiseplan.accdb";
         OleDbConnection conn;
         DatabaseAccess da;
         OleDbDataReader dr;
@@ -36,6 +36,7 @@ namespace Speiseplan
         {
             f2.ReadIntoListView();
             da = new DatabaseAccess();
+            
 
             if (this.Text.Equals("neu anlegen"))
             {
@@ -46,6 +47,7 @@ namespace Speiseplan
             //Bearbeiten
            else
             {
+                
                for (int i = 0; i < f2.VorspeiseL.Count; i++)
                 {
                     MessageBox.Show("hallo");

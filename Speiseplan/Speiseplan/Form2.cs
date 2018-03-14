@@ -63,6 +63,8 @@ namespace Speiseplan
                     listView1.Items.Add(lvItem);
 
                     VorspeiseL.Add(new Vorspeise(Convert.ToInt64(dr[0].ToString()), (dr[1].ToString())));
+                    MessageBox.Show(VorspeiseL.Count.ToString());
+
                 }
                 conn.Close();
             }
@@ -213,7 +215,6 @@ namespace Speiseplan
             }
            Form3 f3 = new Form3();
             f3.pid = Convert.ToInt64(listView1.SelectedItems[0].SubItems[0].Text.ToString());
-            
             f3.Text = "bearbeiten";
             f3.ShowDialog();
         }

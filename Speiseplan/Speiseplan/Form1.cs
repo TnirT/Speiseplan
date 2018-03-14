@@ -9,6 +9,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using Microsoft.Office.Interop.Word;
+using System.IO;
+using System.Globalization;
+using System.Collections;
+
 
 namespace Speiseplan
 {
@@ -26,6 +30,7 @@ namespace Speiseplan
         internal List<Vorspeise> VorspeiseL = new List<Vorspeise>();
         internal List<Hauptspeise> HauptspeiseL = new List<Hauptspeise>();
         internal List<Nachspeise> NachspeiseL = new List<Nachspeise>();
+       // private List<Wert> werte;
         string cn = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = Speiseplan.accdb";
         OleDbConnection conn;
 
@@ -88,7 +93,8 @@ namespace Speiseplan
                             lb.Text = VorspeiseL[z].VName.ToString();
                             tableLayoutPanel1.Controls.Add(lb, i, j);
                             lb.Anchor = (AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top | AnchorStyles.Bottom);
-                            b++;                    
+                            b++;
+                            //wert.Add(b);
 
             }
         }
@@ -211,50 +217,51 @@ namespace Speiseplan
 
         private void druckenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //drucken();
+            drucken();
         }
 
-        //private void drucken()
-        //{
-        //    Microsoft.Office.Interop.Word.Application wordapp = new Microsoft.Office.Interop.Word.Application();
-        //    if (wordapp == null)
-        //    {
-        //        MessageBox.Show("Es konnte keine Verbindung zu Word hergestellt werden!");
-        //        return;
-        //    }
+        private void drucken()
+        {
+            Microsoft.Office.Interop.Word.Application wordapp = new Microsoft.Office.Interop.Word.Application();
+            if (wordapp == null)
+            {
+                MessageBox.Show("Es konnte keine Verbindung zu Word hergestellt werden!");
+                return;
+            }
 
-        //    wordapp.Visible = true;
-
-        //    try
-        //    {
-        //        wordapp.Documents.Open(System.Windows.Forms.Application.StartupPath + "\\Speiseplan.docx");
-        //        wordapp.ActiveDocument.FormFields["Text1"].Result = 
-        //        wordapp.ActiveDocument.FormFields["Text2"].Result = 
-        //        wordapp.ActiveDocument.FormFields["Text3"].Result = 
-        //        wordapp.ActiveDocument.FormFields["Text4"].Result = 
-        //        wordapp.ActiveDocument.FormFields["Text5"].Result = 
-        //        wordapp.ActiveDocument.FormFields["Text6"].Result = 
-        //        wordapp.ActiveDocument.FormFields["Text7"].Result = 
-        //        wordapp.ActiveDocument.FormFields["Text8"].Result = 
-        //        wordapp.ActiveDocument.FormFields["Text9"].Result = 
-        //        wordapp.ActiveDocument.FormFields["Text10"].Result = 
-        //        wordapp.ActiveDocument.FormFields["Text11"].Result = 
-        //        wordapp.ActiveDocument.FormFields["Text12"].Result = 
-        //        wordapp.ActiveDocument.FormFields["Text13"].Result = 
-        //        wordapp.ActiveDocument.FormFields["Text14"].Result = 
-        //        wordapp.ActiveDocument.FormFields["Text15"].Result = 
-        //        wordapp.ActiveDocument.FormFields["Text16"].Result = 
-        //        wordapp.ActiveDocument.FormFields["Text17"].Result = 
-        //        wordapp.ActiveDocument.FormFields["Text18"].Result = 
-        //        wordapp.ActiveDocument.FormFields["Text19"].Result = 
-        //        wordapp.ActiveDocument.FormFields["Text20"].Result = 
-        //        wordapp.ActiveDocument.FormFields["Text21"].Result = 
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //    }
-        //}
+            wordapp.Visible = true;
+           
+            try
+            {
+               
+                wordapp.Documents.Open(System.Windows.Forms.Application.StartupPath + "\\Speiseplan.docx");
+                wordapp.ActiveDocument.FormFields["Text1"].Result = VorspeiseL[0].VName.ToString();
+                 wordapp.ActiveDocument.FormFields["Text2"].Result = VorspeiseL[1].VName.ToString();
+                wordapp.ActiveDocument.FormFields["Text3"].Result = VorspeiseL[2].VName.ToString();
+                wordapp.ActiveDocument.FormFields["Text4"].Result = VorspeiseL[3].VName.ToString();
+                wordapp.ActiveDocument.FormFields["Text5"].Result = VorspeiseL[4].VName.ToString();
+                wordapp.ActiveDocument.FormFields["Text6"].Result = VorspeiseL[5].VName.ToString();
+                wordapp.ActiveDocument.FormFields["Text7"].Result = VorspeiseL[6].VName.ToString();
+                wordapp.ActiveDocument.FormFields["Text8"].Result = HauptspeiseL[0].HName.ToString();
+               wordapp.ActiveDocument.FormFields["Text9"].Result = HauptspeiseL[1].HName.ToString();
+               wordapp.ActiveDocument.FormFields["Text10"].Result =HauptspeiseL[2].HName.ToString();
+                wordapp.ActiveDocument.FormFields["Text11"].Result =HauptspeiseL[3].HName.ToString();
+                wordapp.ActiveDocument.FormFields["Text12"].Result =HauptspeiseL[4].HName.ToString();
+                wordapp.ActiveDocument.FormFields["Text13"].Result =HauptspeiseL[5].HName.ToString();
+                wordapp.ActiveDocument.FormFields["Text14"].Result =HauptspeiseL[6].HName.ToString();
+                wordapp.ActiveDocument.FormFields["Text15"].Result = NachspeiseL[0].NName.ToString();
+                wordapp.ActiveDocument.FormFields["Text16"].Result = NachspeiseL[1].NName.ToString();
+                wordapp.ActiveDocument.FormFields["Text17"].Result = NachspeiseL[2].NName.ToString();
+                wordapp.ActiveDocument.FormFields["Text18"].Result = NachspeiseL[3].NName.ToString();
+                wordapp.ActiveDocument.FormFields["Text19"].Result = NachspeiseL[4].NName.ToString();
+                wordapp.ActiveDocument.FormFields["Text20"].Result = NachspeiseL[5].NName.ToString();
+                wordapp.ActiveDocument.FormFields["Text21"].Result = NachspeiseL[6].NName.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
     }
 }
