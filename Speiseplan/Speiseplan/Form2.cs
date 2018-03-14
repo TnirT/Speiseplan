@@ -58,6 +58,7 @@ namespace Speiseplan
                 while (dr.Read())
                 {
                     lvItem = new ListViewItem(dr[0].ToString());
+                    
                     lvItem.SubItems.Add(dr[1].ToString());
                     listView1.Items.Add(lvItem);
 

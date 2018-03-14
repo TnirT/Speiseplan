@@ -29,9 +29,9 @@ namespace Speiseplan
         int test = 1;
         string sql;
 
-        internal List<Vorspeise> VorspeiseL = new List<Vorspeise>();
-        internal List<Hauptspeise> HauptspeiseL = new List<Hauptspeise>();
-        internal List<Nachspeise> NachspeiseL = new List<Nachspeise>();
+        //internal List<Vorspeise> VorspeiseL = new List<Vorspeise>();
+        //internal List<Hauptspeise> HauptspeiseL = new List<Hauptspeise>();
+        //internal List<Nachspeise> NachspeiseL = new List<Nachspeise>();
         private void Form3_Load(object sender, EventArgs e)
         {
             f2.ReadIntoListView();
