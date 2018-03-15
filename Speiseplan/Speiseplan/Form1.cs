@@ -30,7 +30,7 @@ namespace Speiseplan
         internal List<Vorspeise> VorspeiseL = new List<Vorspeise>();
         internal List<Hauptspeise> HauptspeiseL = new List<Hauptspeise>();
         internal List<Nachspeise> NachspeiseL = new List<Nachspeise>();
-       // private List<Wert> werte;
+    
         string cn = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = Speiseplan.accdb";
         OleDbConnection conn;
 
@@ -92,9 +92,9 @@ namespace Speiseplan
                             lb.Name = b.ToString();
                             lb.Text = VorspeiseL[z].VName.ToString();
                             tableLayoutPanel1.Controls.Add(lb, i, j);
-                            lb.Anchor = (AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top | AnchorStyles.Bottom);
+                            lb.Anchor = (AnchorStyles.Left | AnchorStyles.Right);
                             b++;
-                            //wert.Add(b);
+                            
 
             }
         }
@@ -137,7 +137,7 @@ namespace Speiseplan
                 lb.Name = b.ToString();
                 lb.Text = HauptspeiseL[z].HName.ToString();
                 tableLayoutPanel1.Controls.Add(lb, i, j);
-                lb.Anchor = (AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top | AnchorStyles.Bottom);
+                lb.Anchor = (AnchorStyles.Left | AnchorStyles.Right);
                 b++;
 
             }
@@ -188,7 +188,7 @@ namespace Speiseplan
                 lb.Name = b.ToString();
                 lb.Text = NachspeiseL[z].NName.ToString();
                 tableLayoutPanel1.Controls.Add(lb, i, j);
-                lb.Anchor = (AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top | AnchorStyles.Bottom);
+                lb.Anchor = (AnchorStyles.Left | AnchorStyles.Right);
                 b++;
 
             }

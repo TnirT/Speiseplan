@@ -119,6 +119,8 @@ namespace Speiseplan
 
                 if (this.Text.Equals("Vorspeise bearbeiten"))
                 {
+
+                txtN.Focus();
                     sql = "Update Vorspeise set VName = ? where VID=?";
                     cmd = new OleDbCommand();
                     cmd.CommandText = sql;
@@ -131,7 +133,8 @@ namespace Speiseplan
 
                 if (this.Text.Equals("Hauptspeise bearbeiten"))
                 {
-                    sql = "Update Hauptspeise set HName = ? where HID=?";
+                txtN.Focus();
+                sql = "Update Hauptspeise set HName = ? where HID=?";
                     cmd = new OleDbCommand();
                     cmd.CommandText = sql;
                     cmd.Parameters.Add(new OleDbParameter("HName", txtN.Text));
@@ -143,7 +146,8 @@ namespace Speiseplan
 
                 if (this.Text.Equals("Nachspeise bearbeiten"))
                 {
-                    sql = "Update Nachspeise set NName = ? where NID=?";
+                txtN.Focus();
+                sql = "Update Nachspeise set NName = ? where NID=?";
                     cmd = new OleDbCommand();
                     cmd.CommandText = sql;
                     cmd.Parameters.Add(new OleDbParameter("NName", txtN.Text));
